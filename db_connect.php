@@ -1,5 +1,5 @@
 <?php
-     define('DB_DSN','mysql:host=localhost;dbname=serverside;charset=utf8');
+     define('DB_DSN','mysql:host=172.17.0.1;dbname=serverside;charset=utf8');
      define('DB_USER','serveruser');
      define('DB_PASS','gorgonzola7!');     
      

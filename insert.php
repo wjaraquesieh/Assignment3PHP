@@ -7,14 +7,19 @@
         $content = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         
         //  Build the parameterized SQL query and bind to the above sanitized values.
-
+        $query = "INSERT INTO quotes (author, content) VALUES (:author, :content)";
         
         //  Bind values to the parameters
+        $statement = $db->prepare($query);
 
+        $statement->bindValue(':author', $author);
+        $statement->bindValue(':content', $content);
         
         //  Execute the INSERT.
         //  execute() will check for possible SQL injection and remove if necessary
-
+        if($statement->execute()){
+            echo 'Success!'
+        }
 
     }
 ?>
