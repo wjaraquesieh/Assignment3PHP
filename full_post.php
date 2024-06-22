@@ -49,24 +49,23 @@ if (isset($_GET['id'])) {
             <li><a href="post.php">New Post</a></li>
         </ul> 
         <div id="all_blogs">
-            <form action="process_post.php" method="post">
-                <fieldset>
-                    <legend>Edit Blog Post</legend>
-                    <p>
-                        <label for="title">Title</label>
-                        <input name="title" id="title" value="<?= $quote['title'] ?>" />
-                    </p>
-                    <p>
-                        <label for="content">Content</label>
-                        <textarea name="content" id="content" row=""><?= $quote['content'] ?></textarea>
-                    </p>
-                    <p>
-                        <input type="hidden" name="id" value="<?= $quote['id'] ?>" />
-                        <input type="submit" name="command" value="Update" />
-                        <input type="submit" name="command" value="Delete" onclick="return confirm('Are you sure you wish to delete this post?')" />
-                    </p>
-                </fieldset>
-            </form>
+            <div class="blog_post">
+                <h2><a href="full_post.php?id=<?=$quote['id']?>"><?=$quote['title']?></a></h2>
+                <p>
+                    <small>
+                        <?php  
+                            $date = $quote['datetime'];
+                            $dateTime = new DateTime($date);
+                            $dateFormat = $dateTime->format('F j, Y');
+                        ?>
+                        <?= $dateFormat ?>
+                        <a href="edit.php?id=<?=$quote['id']?>">edit</a>
+                    </small>
+                </p>
+                <div class="blog_content">
+                    <?=$quote['content']?>
+                </div>
+            </div>
         </div>
     </div>
 </body>

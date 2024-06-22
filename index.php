@@ -30,7 +30,9 @@ $statement->execute();
     <!-- Remember that alternative syntax is good and html inside php is bad -->
     <div id="wrapper">
         <div id="header">
-            <h1><a href="index.php">Stung Eye - Index</a></h1>
+            <h1>
+                <img src="./image/gossip.png" alt="gossip"><a href="index.php">Gossip blog</a>
+            </h1>
         </div> 
         <ul id="menu">
             <li><a href="index.php" class="active">Home</a></li>
@@ -39,7 +41,7 @@ $statement->execute();
         <div id="all_blogs">
             <?php while($row = $statement->fetch()): ?>
                 <div class="blog_post">
-                    <h2><a href="show.php?id=<?=$row['id']?>"><?=$row['title']?></a></h2>
+                    <h2><a href="full_post.php?id=<?=$row['id']?>"><?=$row['title']?></a></h2>
                     <p>
                         <small>
                             <?php  
@@ -52,7 +54,8 @@ $statement->execute();
                         </small>
                     </p>
                     <div class="blog_content">
-                        <?=$row['content']?>
+                        <?=substr($row['content'], 0, 200)?> 
+                        <a href="full_post.php?id=<?=$row['id']?>">Read full post...</a>
                     </div>
                 </div>
             <?php endwhile ?>

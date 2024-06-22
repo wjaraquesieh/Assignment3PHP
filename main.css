@@ -13,7 +13,6 @@ textarea {
 
 body {
     text-align: center;
-    background: #222222;    
 }
 
 fieldset {
@@ -90,4 +89,8 @@ h1, h2 {
 
 div.blog_content {
     font-family: Calibri, sans-serif;
+}
+
+img {
+    height: 75px;
 }

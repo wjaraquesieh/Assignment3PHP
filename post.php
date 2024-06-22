@@ -25,7 +25,9 @@ require('connect.php');
     <!-- Remember that alternative syntax is good and html inside php is bad -->
     <div id="wrapper">
         <div id="header">
-            <h1><a href="index.php">Stung Eye - New Post</a></h1>
+            <h1>
+                <img src="./image/gossip.png" alt="gossip"><a href="index.php">Gossip blog</a>
+            </h1>
         </div> 
         <ul id="menu">
             <li><a href="index.php">Home</a></li>
