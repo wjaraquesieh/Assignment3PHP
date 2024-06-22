@@ -1,6 +1,6 @@
  <?php
 
-  define('ADMIN_LOGIN','wally');
+  define('ADMIN_LOGIN','user');
 
   define('ADMIN_PASSWORD','mypass');
 
