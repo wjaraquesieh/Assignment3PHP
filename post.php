@@ -10,24 +10,6 @@
 
 require('connect.php');
 
-if ($_POST && !empty($_POST['title']) && !empty($_POST['content'])) {
-    //  Sanitize user input to escape HTML entities and filter out dangerous characters.
-    $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    $content = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    
-    $query = "INSERT INTO blogpost (title, content) VALUES (:title, :content)";
-    $statement = $db->prepare($query);
-
-    $statement->bindValue(':title', $title);
-    $statement->bindValue(':content', $content);
-    
-    //  Execute the INSERT.
-    if($statement->execute()){
-        echo "Success";
-    }
-
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +18,7 @@ if ($_POST && !empty($_POST['title']) && !empty($_POST['content'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
     <title>My Blog Post!</title>
 </head>
 <body>

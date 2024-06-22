@@ -1,8 +1,8 @@
  <?php
 
-  define('ADMIN_LOGIN','user');
+  define('ADMIN_LOGIN','ghostface');
 
-  define('ADMIN_PASSWORD','mypass');
+  define('ADMIN_PASSWORD','killa');
 
   if (!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW'])
 
